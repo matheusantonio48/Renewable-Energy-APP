@@ -2,12 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import LoginForm from '../components/screens/Login';
-import SignUpForm from '../components/screens/SignUp';
-import Home from '../components/screens/Home';
-import AssetDetails from '../components/screens/AssetDetails';
-import Trade from '../components/screens/Trade';
-import Portfolio from '../components/screens/Portfolio';
+import LoginForm from '../screens/Login';
+import SignUpForm from '../screens/SignUp';
+import Home from '../screens/Home';
+import AssetDetails from '../screens/AssetDetails';
+import Trade from '../screens/Trade';
+import Portfolio from '../screens/Portfolio';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,10 +26,10 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginForm} />
-        <Stack.Screen name="SignUp" component={SignUpForm} />
-        <Stack.Screen name="HomeTabs" component={HomeTabs} />
-        <Stack.Screen name="AssetDetails" component={AssetDetails} />
+        <Stack.Screen options={{ headerTitle: '' }} name="Login" component={LoginForm} />
+        <Stack.Screen options={{ headerTitle: '' }} name="SignUp" component={SignUpForm} />
+        <Stack.Screen options={{ headerTitle: '' }} name="HomeTabs" component={HomeTabs} />
+        <Stack.Screen options={{ headerTitle: '' }} name="AssetDetails" component={AssetDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
