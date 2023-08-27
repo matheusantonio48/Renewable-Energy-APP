@@ -3,10 +3,13 @@ import * as Styled from './styles';
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../../redux/actions';
 import { PasswordInputComponent } from '../../components/PasswordComponent';
+import { NavigationProp, ParamListBase } from '@react-navigation/native';
 
+type Props = {
+    navigation: NavigationProp<ParamListBase>;
+  }
 
-
-const Login = () => {
+  const Login: React.FC<Props> = ({ navigation }) => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -42,7 +45,7 @@ const Login = () => {
 
             <Styled.SignUpWrapper>
                 <Styled.SignUpText>Don’t have an account?</Styled.SignUpText>
-                <Styled.SignUpTouchable onPress={() => {/* Navigate to SignUp Screen */ }}>
+                <Styled.SignUpTouchable onPress={() => navigation.navigate('SignUp')}>
                     <Styled.SignUpText style={{ textDecorationLine: 'underline' }}> Sign up</Styled.SignUpText>
                 </Styled.SignUpTouchable>
                 <Styled.SignUpText> here.</Styled.SignUpText>
